@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: geek-festa-sample
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: geek-festa-sample
+  template:
+    metadata:
+      labels:
+        app: geek-festa-sample
+    spec:
+      containers:
+        - image: ytomimoto/geek-festa-web-api-sample:0.0.1
+          name: geek-festa-sample
+          ports:
+            - containerPort: 80
