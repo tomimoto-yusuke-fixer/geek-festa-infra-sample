@@ -13,7 +13,10 @@ spec:
         app: geek-festa-sample
     spec:
       containers:
-        - image: ytomimoto/geek-festa-web-api-sample:0.0.1
+        - image: ytomimoto/geek-festa-web-api-sample:0.0.6
           name: geek-festa-sample
           ports:
             - containerPort: 80
+          resources:
+            requests:
+              cpu: "300m"
